@@ -24,7 +24,7 @@ checkInternetConnection() {
 	declare -i sleepDuration=3
 	declare -i minutes=$(($pingRetries * $sleepDuration / 60))
 
-	while [[ $pingRetries -gt 0 ]] && ! ping -c 1 -W 1 mirrorlist.centos.org >/dev/null 2>&1; do
+	while [[ $pingRetries -gt 0 ]] && ! ping -c 1 -W 1 vault.centos.org >/dev/null 2>&1; do
 		echo "Could not connect to mirrorlist.centos.org. Internet connection might be down. Retrying (#$pingRetries) in $sleepDuration seconds..."
 		((pingRetries -= 1))
 		sleep $sleepDuration
